@@ -5,6 +5,7 @@ namespace App\Scraper;
 use Goutte\Client;
 use Symfony\Component\DomCrawler\Crawler;
 use App\Blog;
+use Illuminate\Support\Facades\Log;
 
 class BlogScraper
 {
