@@ -13,4 +13,10 @@ class BlogController extends Controller
         return view("blog.index", ['blogs' => $blogs]);
     }
 
+    public function getBlogByCategory(Request $request)
+    {
+        $blogs = Blog::where('category_id', $request->id)->get();
+        return view("blog.index", ['blogs' => $blogs]);
+    }
+
 }

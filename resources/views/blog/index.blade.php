@@ -6,8 +6,8 @@
     <title>Blogs</title>
 </head>
 <body>
-    @foreach($blogs as $blog)
-        <h2>{{ $blog->title }} : <span style="color: red"> {{ $blog->tag }}</span></h2>
+    @foreach($blogs as $key => $blog)
+        <h2>{{ $blog->title }} : <span style="color: red"> {{ $blog->tag }}</span> <i>{{ $key }}</i></h2>
         <div>
             <a href="{{$blog->link}}">{{$blog->link}}</a>
         </div>
