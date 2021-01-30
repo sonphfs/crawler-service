@@ -4,14 +4,14 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class ScrapeCommand extends Command
+class CrawlBlogCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'scrape:tgdd';
+    protected $signature = 'crawl:data';
 
     /**
      * The console command description.
@@ -37,7 +37,11 @@ class ScrapeCommand extends Command
      */
     public function handle()
     {
-        $bot = new \App\Scraper\TGDD();
-        $bot->scrape();
+        try {
+            $bot = new \App\Scraper\BlogScraper();
+            $bot->scrape();
+        } catch(Exception $e) {
+            report($e);
+        }
     }
 }

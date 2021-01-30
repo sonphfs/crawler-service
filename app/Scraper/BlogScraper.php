@@ -6,7 +6,7 @@ use Goutte\Client;
 use Symfony\Component\DomCrawler\Crawler;
 use App\Blog;
 
-class BlogScaper
+class BlogScraper
 {
 
     public function scrape()
@@ -38,6 +38,7 @@ class BlogScaper
                                 $blog->tag = $category["tag"];
                                 $blog->category_id = $categoryId;
                                 $blog->save();
+                                Log::info("Crawl new blog: ", json_encode($blog));
                                 var_dump("Store : ".$blog->id);
                             } else {
                                 var_dump("Link is already exists!");
