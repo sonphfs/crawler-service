@@ -11,6 +11,7 @@ class BlogScraper
 
     public function scrape()
     {
+        Log::info("===============START=============");
         $categories = $this->getCategories();
         $tenMinutesAgo = strtotime(\Carbon\Carbon::now()->subMinute(10));
 
@@ -51,6 +52,7 @@ class BlogScraper
                 }
             );
         }
+        Log::info("===============END=============");
     }
 
     public function hasNode($node)
