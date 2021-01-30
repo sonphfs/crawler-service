@@ -40,7 +40,7 @@ class BlogScraper
                                 $blog->tag = $category["tag"];
                                 $blog->category_id = $categoryId;
                                 $blog->save();
-                                Log::info("Crawl new blog: ", json_encode($blog));
+                                Log::info("Crawl new blog: ". json_encode($blog));
                                 var_dump("Store : ".$blog->id);
                             } else {
                                 var_dump("Link is already exists!");
